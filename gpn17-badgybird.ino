@@ -47,11 +47,9 @@ bool button_pressed = false;
 void setup() {  
   badge.init();
   badge.setBacklight(true);
-  Serial.begin(115200);
 
   tft.fillScreen(BACKGROUND);
   tft.writeFramebuffer();
-
   
   badge.setGPIO(MQ3_EN,1);
   rboot_config rboot_config = rboot_get_config();
@@ -131,7 +129,7 @@ void loop() {
 
 void init_game() {
   
-  randomSeed(1337);
+  //randomSeed(analogRead(0));
 
   player.posy = 30;
   player.speed = 0;
