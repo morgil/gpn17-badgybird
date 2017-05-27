@@ -6,8 +6,8 @@ class Player {
     float speed = 0;
     float posx = 10;
     float posy = 30;
-    int size = 10;
-    float gravity = 0.05;
+    int size = 8;
+    float gravity = 0.1;
 
     void draw(TFT_ILI9163C tft);
     void jump();
@@ -21,6 +21,10 @@ void Player::draw(TFT_ILI9163C tft) {
 }
 
 void Player::jump() {
-  speed = -1;
+  if (speed > 0) {
+    speed = -1.5;
+  } else {
+    speed -= 1;
+  }
 }
 
